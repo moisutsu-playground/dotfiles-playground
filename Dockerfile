@@ -9,4 +9,6 @@ ARG PASSWORD=docker
 RUN useradd -m -u ${UID} ${USER} && \
     echo ${USER}:${PASSWORD} | chpasswd
 
+ENV HOME=/home/docker
+
 USER ${USER}

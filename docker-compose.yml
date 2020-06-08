@@ -4,5 +4,3 @@ services:
         build: .
         working_dir: /work
         tty: true
-        environment:
-            - HOME=/work
