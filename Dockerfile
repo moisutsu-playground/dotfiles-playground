@@ -11,4 +11,12 @@ RUN useradd -m -u ${UID} ${USER} && \
 
 ENV HOME=/home/docker
 
+ENV DEBIAN_FRONTEND=noninteractive
+
+RUN apt install -y tzdata language-pack-ja-base language-pack-ja locales && \
+    locale-gen ja_JP.UTF-8
+
+ENV TZ=Asia/Tokyo
+ENV LANG='ja_JP.UTF-8'
+
 USER ${USER}
