@@ -7,6 +7,6 @@ ARG UID=1000
 ARG USER=docker
 ARG PASSWORD=docker
 RUN useradd -m -u ${UID} ${USER} && \
-    && echo ${USER}:${PASSWORD} | chpasswd
+    echo ${USER}:${PASSWORD} | chpasswd
 
 USER ${USER}
