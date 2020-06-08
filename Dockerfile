@@ -1,0 +1,12 @@
+FROM ubuntu:20.04
+
+RUN apt update && \
+    apt install -y curl sudo git
+
+ARG UID=1000
+ARG USER=docker
+ARG PASSWORD=docker
+RUN useradd -m -u ${UID} ${USER} && \
+    && echo ${USER}:${PASSWORD} | chpasswd
+
+USER ${USER}
